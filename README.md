@@ -1,5 +1,3 @@
-dIlg6nLSkOswlp@4PtX1uKy!LY8I$2U7l7wHWanmGsVKxWTRttKrGp9E9gh3QVjJMtyet
-
 # Django Practice Project: Newspaper Website
 
 ## Project Description
