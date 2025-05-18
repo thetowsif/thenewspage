@@ -1,0 +1,26 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col">
+                <h1 class="text-center">Login</h1>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-3">
+            <div class="col-md-4 justify-content-center">
+                {% include 'registration/partials/form.html' with form=form text='Enter'%}
+            </div>
+        </div>
+        <div class="row justify-content-center mt-3">
+            <div class="col-md-2 d-flex justify-content-center">
+                <a href="{% url 'signup' %}">Don't have an account?</a>
+            </div>
+            <div class="col-md-2 d-flex justify-content-center">
+                <a href="{% url 'password_reset' %}">Forgot your password?</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

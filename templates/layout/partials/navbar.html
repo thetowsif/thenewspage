@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg bg-success">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'home' %}">TheNewsPage</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">Home</a>
+                </li>
+                {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'article_list' %}">Article List</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'article_new' %}">Create New Article</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+        <div class="d-flex align-items-center">
+            {% if user.is_authenticated %}
+                <span class="navbar-text mx-2">Welcome, {{ user.username }}</span>
+                <a href="{% url 'password_change' %}" class="btn btn-info mx-2">Change Password</a>
+                <form method="post" action="{% url 'logout' %}" class="mx-2">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-warning">Log Out</button>
+                </form>
+            {% else %}
+                <a href="{% url 'login' %}" class="btn btn-warning mx-2">Log In</a>
+                <a href="{% url 'signup' %}" class="btn btn-warning mx-2">Sign In</a>
+            {% endif %}
+        </div>
+    </div>
+</nav>

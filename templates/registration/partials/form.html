@@ -1,0 +1,8 @@
+{% load crispy_forms_filters %}
+<form class="form" method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <div class="d-flex justify-content-center mt-2">
+        <input class="btn btn-primary" type="submit" value="{{ text }}">
+    </div>
+</form>

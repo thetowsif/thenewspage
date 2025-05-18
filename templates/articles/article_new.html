@@ -1,0 +1,19 @@
+{% extends 'layout/base.html' %}
+{% load crispy_forms_filters %}
+
+{% block title %}New Article{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col">
+                <h1 class="text-center">New article</h1>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-3">
+            <div class="col-md-8 d-flex justify-content-center">
+                {% include 'articles/partials/form.html' with form=form text='Save' %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
